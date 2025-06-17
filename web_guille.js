@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   cambiarIdioma(idiomaGuardado);
 
   const filterButtons = document.querySelectorAll(".filter-btn");
-  const images = document.querySelectorAll(".gallery-grid img");
+  const galleryItems = document.querySelectorAll(".gallery-item");
 
   filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -41,10 +41,59 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.classList.add("active");
 
         // Filtrar imágenes
-        images.forEach(img => {
+        galleryItems.forEach(img => {
             const imgCategory = img.getAttribute("data-category");
             img.style.display = (category === "all" || category === imgCategory) ? "block" : "none";
         });
     });
   });
+
+  const modal = document.getElementById("image-modal");
+  const modalImg = document.getElementById("modal-img");
+  const closeBtn = document.querySelector(".modal-close");
+  const prevBtn = document.querySelector(".modal-nav.left");
+  const nextBtn = document.querySelector(".modal-nav.right");
+
+  const galleryImages = Array.from(document.querySelectorAll(".gallery-grid img"));
+  let currentIndex = 0;
+
+  function openModal(index) {
+  currentIndex = index;
+  modalImg.src = galleryImages[currentIndex].src;
+  modal.classList.remove("hidden");
+}
+
+function closeModal() {
+  modal.classList.add("hidden");
+}
+
+function showNext() {
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  modalImg.src = galleryImages[currentIndex].src;
+}
+
+function showPrev() {
+  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+  modalImg.src = galleryImages[currentIndex].src;
+}
+
+galleryImages.forEach((img, index) => {
+  img.addEventListener("click", () => openModal(index));
+});
+
+closeBtn.addEventListener("click", closeModal);
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) closeModal();
+});
+nextBtn.addEventListener("click", showNext);
+prevBtn.addEventListener("click", showPrev);
+
+// Navegación con flechas del teclado
+document.addEventListener("keydown", (e) => {
+  if (!modal.classList.contains("hidden")) {
+    if (e.key === "ArrowRight") showNext();
+    if (e.key === "ArrowLeft") showPrev();
+    if (e.key === "Escape") closeModal();
+  }
+});
 });

@@ -28,7 +28,7 @@
       </p>
     </div>
     <div class="hero-image">
-      <img src="img/hero.jpg" alt="Guille tattooing a client" />
+      <img src="img/prueba_tatuador.png" alt="Guille tattooing a client" />
     </div>
   </header>
 
@@ -43,21 +43,42 @@
       <button class="filter-btn" data-category="color" data-en="Color" data-es="Color">Color</button>
       <button class="filter-btn" data-category="minimalist" data-en="Minimalist" data-es="Minimalista">Minimalist</button>
     </div>
+    
     <!-- Galería dinámica -->
     <div class="gallery-grid">
-      
-      <img src="img/black1.jpg" alt="Blackwork tattoo" data-category="blackwork">
-      <img src="img/color1.jpg" alt="Color tattoo" data-category="color">
-      <img src="img/minimal1.jpg" alt="Minimalist tattoo" data-category="minimalist">
-    <!-- Tattoo images go here -->
-    </div>
-  </section>
+      <div class="gallery-item" data-category="blackwork">
+        <img src="img/tattoo_brazo.jpg" alt="Blackwork tattoo">
+      </div>
+      <div class="gallery-item" data-category="blackwork">
+        <img src="img/tattoo_brazo_2.jpg" alt="Blackwork tattoo">
+      </div>
+      <div class="gallery-item" data-category="color">
+        <img src="img/tattoo_color4.jpg" alt="Color tattoo">
+      </div>
+      <div class="gallery-item" data-category="color">
+        <img src="img/tattoo_color.jpg" alt="Color tattoo">
+      </div>
+      <div class="gallery-item" data-category="minimalist">
+        <img src="img/tattoo_minimalista_1.jpg" alt="Minimalist tattoo">
+      </div>
+      <div class="gallery-item" data-category="minimalist">
+        <img src="img/tattoo_minimalista_2.jpg" alt="Minimalist tattoo">
+      </div>
+  </div>
+
+  <!-- Modal de imagen -->
+  <div id="image-modal" class="modal hidden">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modal-img" alt="Ampliación de tatuaje">
+    <button class="modal-nav left">&#10094;</button>
+    <button class="modal-nav right">&#10095;</button>
+  </div>
 
   <!-- Sobre mí -->
   <section id="about">
     <h2 data-en="About Me" data-es="Sobre mí">About Me</h2>
     <p data-en="I'm Guille, a passionate tattoo artist with 2 years of experience."
-       data-es="Soy Guille, un tatuador apasionado con dos años de experiencia.">
+      data-es="Soy Guille, un tatuador apasionado con dos años de experiencia.">
       I'm Guille, a passionate tattoo artist with 2 years of experience.
     </p>
   </section>
@@ -87,7 +108,8 @@
       <input type="email" name="email" placeholder="Your email" required />
       <input type="date" name="date" required />
       <textarea name="message" placeholder="Describe your idea..." required></textarea>
-      <button type="submit" data-en="Submit" data-es="Enviar">Submit</button>
+      <button type="submit"><span data-en="Submit" data-es="Enviar">Submit</span></button>
+
     </form>
 
     <div class="external-booking">
