@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guille Tattoo</title>
+  <link rel="stylesheet" href="web_guille.css" />
+</head>
+<body>
+
+  <!-- Selector de idioma -->
+  <div class="language-switcher">
+    <span id="language-label">Language:</span>
+    <button id="en-btn">
+      <img src="img/uk-flag.jpg" alt="English" width="20" height="14" >EN
+    </button>
+    <button id="es-btn">
+      <img src="img/es-flag.png" alt="Español" width="20" height="14">ES
+    </button>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Guille Tattoo</h1>
+      <p data-en="Professional tattoo artist based in Gold Coast (Australia)" data-es="Tatuador profesional con sede en Gold Coast (Australia)">
+        Professional tattoo artist based in Gold Coast (Australia)
+      </p>
+    </div>
+    <div class="hero-image">
+      <img src="img/hero.jpg" alt="Guille tattooing a client" />
+    </div>
+  </header>
+
+  <!-- Galería -->
+  <section class="gallery" id="gallery">
+    <h2 data-en="Gallery" data-es="Galería">Gallery</h2>
+
+    <!-- Filtros -->
+    <div class="filters">
+      <button class="filter-btn active" data-category="all" data-en="All" data-es="Todos">All</button>
+      <button class="filter-btn" data-category="blackwork" data-en="Blackwork" data-es="Blackwork">Blackwork</button>
+      <button class="filter-btn" data-category="color" data-en="Color" data-es="Color">Color</button>
+      <button class="filter-btn" data-category="minimalist" data-en="Minimalist" data-es="Minimalista">Minimalist</button>
+    </div>
+    <!-- Galería dinámica -->
+    <div class="gallery-grid">
+      
+      <img src="img/black1.jpg" alt="Blackwork tattoo" data-category="blackwork">
+      <img src="img/color1.jpg" alt="Color tattoo" data-category="color">
+      <img src="img/minimal1.jpg" alt="Minimalist tattoo" data-category="minimalist">
+    <!-- Tattoo images go here -->
+    </div>
+  </section>
+
+  <!-- Sobre mí -->
+  <section id="about">
+    <h2 data-en="About Me" data-es="Sobre mí">About Me</h2>
+    <p data-en="I'm Guille, a passionate tattoo artist with 2 years of experience."
+       data-es="Soy Guille, un tatuador apasionado con dos años de experiencia.">
+      I'm Guille, a passionate tattoo artist with 2 years of experience.
+    </p>
+  </section>
+
+  <!-- Contacto -->
+  <section class="contact" id="contact">
+    <h2 data-en="Contact" data-es="Contacto">Contact</h2>
+    <div class="contact-info">
+      <div class="map-container">
+        <!-- Mapa embebido -->
+        <iframe src="https://www.google.com/maps/embed?..." width="100%" height="200" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="socials">
+        <p data-en="Follow me on social networks:" data-es="Sígueme en redes:">Follow me on social networks:</p>
+        <a href="#" target="_blank" aria-label="Instagram">Instagram</a>
+        <a href="#" target="_blank" aria-label="TikTok">TikTok</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservas -->
+  <section class="booking" id="booking">
+    <h2 data-en="Book an Appointment" data-es="Reservar una cita">Book an Appointment</h2>
+    
+    <form id="booking-form">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <input type="date" name="date" required />
+      <textarea name="message" placeholder="Describe your idea..." required></textarea>
+      <button type="submit" data-en="Submit" data-es="Enviar">Submit</button>
+    </form>
+
+    <div class="external-booking">
+      <p data-en="Or reserve directly via Calendly:" data-es="O reserva directamente a través de Calendly:">Or reserve directly via Calendly:</p>
+      <a href="https://calendly.com/" target="_blank" rel="noopener noreferrer">Calendly</a>
+    </div>
+  </section>
+
+  <script src="web_guille.js"></script>
+</body>
+</html>
