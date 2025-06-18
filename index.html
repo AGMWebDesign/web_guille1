@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Guille Tattoo</title>
   <link rel="stylesheet" href="web_guille.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
 
@@ -75,8 +77,9 @@
   </div>
 
   <!-- Sobre mí -->
-  <section id="about">
+  <section id="about" class="fade-in-up">
     <h2 data-en="About Me" data-es="Sobre mí">About Me</h2>
+    <img src="img/imagen_inicio.jpg" alt="Foto de Guille, tatuador" class="about-img">
     <p data-en="I'm Guille, a passionate tattoo artist with 2 years of experience."
       data-es="Soy Guille, un tatuador apasionado con dos años de experiencia.">
       I'm Guille, a passionate tattoo artist with 2 years of experience.
@@ -93,8 +96,12 @@
       </div>
       <div class="socials">
         <p data-en="Follow me on social networks:" data-es="Sígueme en redes:">Follow me on social networks:</p>
-        <a href="#" target="_blank" aria-label="Instagram">Instagram</a>
-        <a href="#" target="_blank" aria-label="TikTok">TikTok</a>
+        <a href="#" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i> <span>Instagram</span>
+        </a>
+        <a href="#" target="_blank" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i> <span>TikTok</span>
+        </a>
       </div>
     </div>
   </section>
@@ -104,13 +111,30 @@
     <h2 data-en="Book an Appointment" data-es="Reservar una cita">Book an Appointment</h2>
     
     <form id="booking-form">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="email" name="email" placeholder="Your email" required />
-      <input type="date" name="date" required />
-      <textarea name="message" placeholder="Describe your idea..." required></textarea>
-      <button type="submit"><span data-en="Submit" data-es="Enviar">Submit</span></button>
+  <input type="text" name="name"
+    placeholder="Your name"
+    data-en-placeholder="Your name"
+    data-es-placeholder="Tu nombre"
+    required />
 
-    </form>
+  <input type="email" name="email"
+    placeholder="Your email"
+    data-en-placeholder="Your email"
+    data-es-placeholder="Tu correo"
+    required />
+
+  <input type="date" name="date" required />
+
+  <textarea name="message"
+    placeholder="Describe your idea..."
+    data-en-placeholder="Describe your idea..."
+    data-es-placeholder="Describe tu idea..."
+    required></textarea>
+
+  <button type="submit">
+    <span data-en="Submit" data-es="Enviar">Submit</span>
+  </button>
+</form>
 
     <div class="external-booking">
       <p data-en="Or reserve directly via Calendly:" data-es="O reserva directamente a través de Calendly:">Or reserve directly via Calendly:</p>

@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const enBtn = document.getElementById("en-btn");
   const esBtn = document.getElementById("es-btn");
 
+
+  // Cambiar idioma
   function actualizarBotones(idioma) {
     enBtn.classList.toggle("active", idioma === "en");
     esBtn.classList.toggle("active", idioma === "es");
@@ -13,6 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
     elementos.forEach(el => {
       const texto = el.getAttribute(`data-${idioma}`);
       if (texto) el.textContent = texto;
+
+    const placeholders = document.querySelectorAll("[data-en-placeholder]");
+
+      placeholders.forEach(el => {
+        const nuevoPlaceholder = el.getAttribute(`data-${idioma}-placeholder`);
+        if (nuevoPlaceholder) el.placeholder = nuevoPlaceholder;
+});
     });
 
     const label = document.getElementById("language-label");
@@ -28,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const idiomaGuardado = localStorage.getItem("idioma") || (navigator.language.startsWith("es") ? "es" : "en");
   cambiarIdioma(idiomaGuardado);
+
+//Filtros
 
   const filterButtons = document.querySelectorAll(".filter-btn");
   const galleryItems = document.querySelectorAll(".gallery-item");
@@ -56,6 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const galleryImages = Array.from(document.querySelectorAll(".gallery-grid img"));
   let currentIndex = 0;
+
+// Modal
 
   function openModal(index) {
   currentIndex = index;
@@ -96,4 +109,23 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
   }
 });
+
+// Fade-in-up
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target); // Solo una vez
+      }
+    });
+
+  }, {
+    threshold: 0.1,
+  });
+
+  const aboutSection = document.querySelector("#about");
+if (aboutSection) {
+  observer.observe(aboutSection);
+}
 });
