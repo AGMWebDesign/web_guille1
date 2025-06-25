@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Work Sans', sans-serif;
   background-color: #ffffff;
   color: #111111;
   line-height: 1.6;
@@ -15,9 +15,8 @@ body {
 }
 
 h1, h2 {
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: -3px;
   margin-bottom: 20px;
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
@@ -74,47 +73,55 @@ button:hover {
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
-  background-image: url(img/prueba_tatuador.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #333;
   text-align: center;
   margin-top: 60px;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.hero-overlay {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
-}
 
 .hero-content h1 {
-  font-size: 2.5rem;
+  font-size: 5rem;
   margin-bottom: 10px;
   font-weight: bold;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  transform: scaleX(0.8);
 }
 
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: 2.5rem;
   max-width: 600px;
   margin: 0 auto;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Ocultar galería con animación suave */
+.gallery.hidden{
+  display: none;
+}
+
+/* Contenedor del botón */
+.gallery-toggle-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* Estilo del botón */
+.toggle-btn{
+  font-family: 'Work Sans', sans-serif;
+  background-color: #333;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle-btn:hover {
+  background-color: #444;
 }
 
 
@@ -126,12 +133,13 @@ button:hover {
 }
 
 .gallery h2 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   margin-bottom: 1.5rem;
   font-weight: bold;
   border-bottom: 2px solid #000;
   display: inline-block;
   padding-bottom: 0.5rem;
+  transform: scaleX(0.8);
 }
 
 .filters {
@@ -257,12 +265,13 @@ button:hover {
 }
 
 #about h2 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   margin-bottom: 1.5rem;
   font-weight: bold;
   border-bottom: 2px solid #000;
   display: inline-block;
   padding-bottom: 0.5rem;
+  transform: scaleX(0.8);
 }
 
 .about-img {
@@ -301,12 +310,13 @@ button:hover {
 }
 
 .contact h2 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   margin-bottom: 1.5rem;
   font-weight: bold;
   border-bottom: 2px solid #000;
   display: inline-block;
   padding-bottom: 0.5rem;
+  transform: scaleX(0.8);
 }
 
 .contact-info {
@@ -367,12 +377,13 @@ button:hover {
 }
 
 .booking h2 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   margin-bottom: 1.5rem;
   font-weight: bold;
   border-bottom: 2px solid #000;
   display: inline-block;
   padding-bottom: 0.5rem;
+  transform: scaleX(0.8);
 }
 
 .booking form {
@@ -435,15 +446,17 @@ button:hover {
 }
 
 
+
+
 /* RESPONSIVE */
 
 @media (max-width: 768px) {
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 5rem;
   }
 
   .hero-content p {
-    font-size: 1rem;
+    font-size: 2.5rem;
   }
 
 
