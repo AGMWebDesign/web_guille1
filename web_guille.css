@@ -79,7 +79,7 @@ button:hover {
   justify-content: center;
   color: #333;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 
@@ -96,23 +96,32 @@ button:hover {
   margin: 0 auto;
 }
 
+section {
+  scroll-margin-top: 100px;
+}
+
 /* Ocultar galería con animación suave */
 .gallery {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transition: max-height 0.8s ease, opacity 0.5s ease;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .gallery.show {
-  max-height: 3000px; /* Suficiente para que se vea toda */
+  max-height: 3000px;
   opacity: 1;
+  padding: 4rem 2rem;
+  margin-bottom: 3rem;
 }
 
 /* Contenedor del botón */
 .gallery-toggle-container {
   text-align: center;
-  margin: 2rem 0;
+  margin: 2rem auto 1rem;
+  max-width: 100%;
 }
 
 /* Estilo del botón */
@@ -357,13 +366,14 @@ button:hover {
 .socials p {
   margin-bottom: 0.5rem;
   font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .socials a {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 2rem;
   color: #000;
   text-decoration: none;
   margin: 0.5rem 0;
@@ -383,7 +393,7 @@ button:hover {
   padding: 2rem 1rem;
   background-color: #fff; /* O #000 si usas fondo oscuro */
   color: #000;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -395,6 +405,7 @@ button:hover {
   display: inline-block;
   padding-bottom: 0.5rem;
   transform: scaleX(0.8);
+  text-align: center;
 }
 
 .booking form {
@@ -467,7 +478,25 @@ button:hover {
   }
 
   .hero-content p {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
+    padding: 0 1rem;
+  }
+
+  .hero {
+    height: auto;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    margin-top: 100px;
+  }
+
+  .language-switcher {
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+  }
+
+  .toggle-btn {
+    margin-top: 1rem;
   }
 
 
