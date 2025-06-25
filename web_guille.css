@@ -92,13 +92,21 @@ button:hover {
 
 .hero-content p {
   font-size: 2.5rem;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 /* Ocultar galería con animación suave */
-.gallery.hidden{
-  display: none;
+.gallery {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.8s ease, opacity 0.5s ease;
+}
+
+.gallery.show {
+  max-height: 3000px; /* Suficiente para que se vea toda */
+  opacity: 1;
 }
 
 /* Contenedor del botón */
@@ -127,7 +135,7 @@ button:hover {
 
 /* Galería */
 .gallery {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -168,15 +176,18 @@ button:hover {
 /* Galería Grid */
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .gallery-item {
-  position: relative;
-  width: 100%;
+  width: 200px;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 0.5rem;
