@@ -391,7 +391,7 @@ section {
 /* Booking */
 .booking {
   padding: 2rem 1rem;
-  background-color: #fff; /* O #000 si usas fondo oscuro */
+  background-color: #fff; 
   color: #000;
   max-width: 700px;
   margin: 0 auto;
