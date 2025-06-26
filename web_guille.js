@@ -35,26 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const idiomaGuardado = localStorage.getItem("idioma") || (navigator.language.startsWith("es") ? "es" : "en");
   cambiarIdioma(idiomaGuardado);
 
-  // Botón mostrar galería con animación slide
-  const gallery = document.getElementById("gallery");
-  const toggleBtn = document.getElementById("toggle-gallery-btn");
-
-  const texts = {
-    en: { show: "Show Gallery", hide: "Hide Gallery" },
-    es: { show: "Mostrar galería", hide: "Ocultar galería" }
-  };
-
-  const updateButtonText = () => {
-    const isVisible = gallery.classList.contains("show");
-    toggleBtn.textContent = isVisible ? texts[idiomaGuardado].hide : texts[idiomaGuardado].show;
-  };
-
-  updateButtonText();
-
-  toggleBtn.addEventListener("click", () => {
-    gallery.classList.toggle("show");
-    updateButtonText();
-  });
 
   // Filtros de galería
   const filterButtons = document.querySelectorAll(".filter-btn");
